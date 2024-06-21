@@ -60,7 +60,6 @@ class CategoryController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'slug' => 'required|string|max:255|unique:categories,slug,',
             'name' => 'required|string|max:255',
         ]);
 
@@ -69,7 +68,6 @@ class CategoryController extends Controller
         }
 
         $category->update([
-            'slug' => $request->slug,
             'name' => $request->name,
         ]);
 

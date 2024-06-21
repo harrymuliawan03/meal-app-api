@@ -79,7 +79,7 @@ class MealController extends Controller
 
         $validator = Validator::make($request->all(), [
             'title' => 'sometimes|required|string|max:255',
-            'image' => 'sometimes|required|string', // Accept Base64 image
+            'image' => 'nullable|string', // Accept Base64 image
             'ingredients' => 'sometimes|required|array',
             'steps' => 'sometimes|required|array',
             'duration' => 'sometimes|required|integer',
