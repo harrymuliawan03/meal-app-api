@@ -14,6 +14,7 @@ class CategoryController extends Controller
         $validator = Validator::make($request->all(), [
             'slug'     => 'required|string|max:255|unique:categories',
             'name'      => 'required|string|max:255',
+            'color'      => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -23,6 +24,7 @@ class CategoryController extends Controller
         $category = Category::create([
             'slug'     => $request->slug,
             'name'      => $request->name,
+            'color'      => $request->color,
         ]);
 
         return response()->json([
